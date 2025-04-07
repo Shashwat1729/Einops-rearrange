@@ -258,7 +258,7 @@ def apply_operations(t: np.ndarray, ia: List[str], oa: List[str], **al) -> np.nd
             r = np.transpose(r, no)
             
         except KeyError as e:
-            raise ee("Bad axis")
+            raise ee("Axis not found")
     
     return r
 
