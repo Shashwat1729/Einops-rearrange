@@ -1,6 +1,6 @@
 # Einops-rearrange
 
-Implement a Python module that replicates the core functionality of einops, specifically the rearrange operation. Your implementation should work with NumPy arrays and should not use the existing einops library.
+Implementation of a Python module that replicates the core functionality of einops, specifically the rearrange operation. This implementation works with NumPy arrays and doesnt use the existing einops library.
 
 ## Installation
 
@@ -10,5 +10,5 @@ cd Einops-rearrange
 ```
 
 ## Try in Colab
-
+Try this yourself using this colab :
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Shashwat1729/Einops-rearrange/blob/main/test_einops.ipynb) 
