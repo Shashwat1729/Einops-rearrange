@@ -1,0 +1,73 @@
+Implement einops from scratch
+Background
+Einops is a powerful library for tensor operations in deep learning frameworks. It provides a concise and readable way to manipulate tensors using Einstein notation-inspired syntax. Your task is to implement a subset of einops functionality from scratch, focusing on the core features and principles.
+Assignment
+Implement a Python module that replicates the core functionality of einops, specifically the rearrange operation. Your implementation should work with NumPy arrays and should not use the existing einops library.
+Requirements:
+Implement the rearrange function with the following signature:
+def rearrange(tensor: np.ndarray, pattern: str, **axes_lengths) -> np.ndarray:
+    ...
+
+The rearrange function should support the following operations:
+Reshaping
+Transposition
+Splitting of axes
+Merging of axes
+Repeating of axes
+
+Implement a parser for the einops pattern string that can:
+Identify input axes
+Identify output axes
+Recognize ellipsis (...) for handling batch dimensions
+Parse elementary operations (splitting, merging, repeating)
+
+Implement error checking and informative error messages for:
+Invalid pattern strings
+Mismatched tensor shapes
+Missing or extra axes_lengths arguments
+
+Optimize your implementation for performance, considering:
+Efficient parsing of the pattern string
+Minimizing the number of intermediate tensor operations
+
+Write comprehensive unit tests covering various use cases and edge cases.
+
+Provide clear documentation and type hints for your implementation.
+Example Usage:
+Your implementation should support operations like:
+
+import numpy as np
+from your_module import rearrange
+
+# Transpose
+x = np.random.rand(3, 4)
+result = rearrange(x, 'h w -> w h')
+
+# Split an axis
+x = np.random.rand(12, 10)
+result = rearrange(x, '(h w) c -> h w c', h=3)
+
+# Merge axes
+x = np.random.rand(3, 4, 5)
+result = rearrange(x, 'a b c -> (a b) c')
+
+# Repeat an axis
+x = np.random.rand(3, 1, 5)
+result = rearrange(x, 'a 1 c -> a b c', b=4)
+
+# Handle batch dimensions
+x = np.random.rand(2, 3, 4, 5)
+result = rearrange(x, '... h w -> ... (h w)')
+Evaluation Criteria:
+Correctness of the implementation
+Code quality and organization
+Performance and efficiency
+Completeness of error handling
+Quality of documentation and tests
+Ability to handle complex patterns and edge cases
+Submission Guidelines:
+Provide your implementation in a Google colab notebook.
+Include separate cells with your unit tests.
+Write a brief README.md explaining your approach, any design decisions, and how to run your code and tests.
+
+Good luck!
